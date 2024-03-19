@@ -200,21 +200,21 @@ public class Main {
 
     private static void TampilkanData() {
         clear();
-        System.out.println("=".repeat(162));
-        System.out.println("=".repeat(65) + " LIST DATA DESTINASI WISATA ALAM " + "=".repeat(64));
-        System.out.println("=".repeat(162));
-        System.out.printf("| %-30s | %-15s | %-15s | %-70s | %-15s |\n", "Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi", "Jumlah Kunjungan");
-        System.out.println("=".repeat(162));
+        System.out.println("=".repeat(168));
+        System.out.println("=".repeat(68) + " LIST DATA DESTINASI WISATA ALAM " + "=".repeat(67));
+        System.out.println("=".repeat(168));
+        System.out.printf("| %-3s | %-30s | %-15s | %-15s | %-70s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi", "Jumlah Kunjungan");
+        System.out.println("=".repeat(168));
         if (DataDestinasi != null && !DataDestinasi.isEmpty()) {
             for (int i = 0; i < DataDestinasi.size(); i++) {
-                DataDestinasi.get(i).display();
+                DataDestinasi.get(i).display(i + 1); 
             }
         } else {
             System.out.println("Data Destinasi Wisata Alam Kosong!!.");
         }
-        System.out.println("=".repeat(162));
+        System.out.println("=".repeat(168));
     }
-
+    
     private static void UpdateData() throws IOException {
         clear();
         System.out.println("=".repeat(71));

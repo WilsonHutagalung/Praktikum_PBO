@@ -13,9 +13,10 @@ public class DestinasiWisata {
         this.Jumlah_Kunjungan = Kunjungan;
     }
 
-    void display(){
-        System.out.printf("| %-30s | %-15d | %-15s | %-70s | %-15d  |\n", this.Nama_Destinasi, this.Tahun_DiTemukan, this.Lokasi,this.Deskripsi, this.Jumlah_Kunjungan);
+    void display(int nomor){
+        System.out.printf("| %-3d | %-30s | %-15d | %-15s | %-70s | %-15d  |\n", nomor, this.Nama_Destinasi, this.Tahun_DiTemukan, this.Lokasi,this.Deskripsi, this.Jumlah_Kunjungan);
     }
+    
 
     public void setNama(String Nama_Baru){
         this.Nama_Destinasi = Nama_Baru;
