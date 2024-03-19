@@ -12,17 +12,19 @@ public class Main {
         System.out.flush();
     }  
     
-    public static int Cek_int() throws IOException{
+    private static int Cek_int() throws IOException{
         int Cek = 0;
         while (true){
             try{
-            Cek = Integer.parseInt(input.readLine());
-            break;
+                Cek = Integer.parseInt(input.readLine());
+                break;
             }catch (NumberFormatException e){
                 System.out.println("Harap Masukkan Nilai Integer . . . ");
+                
             }
         }
         return Cek;
+
     }
 
     private static boolean ulang(String message) throws IOException {
@@ -50,7 +52,7 @@ public class Main {
             System.out.println(" [3] EXIT                      ");
             System.out.println("=".repeat(34));
             System.out.print("Masukkan pilihan Anda >> ");
-            int pilih = Integer.parseInt(input.readLine());
+            int pilih = Cek_int();
             switch(pilih){
                 case 1:
                     Login();
@@ -144,7 +146,7 @@ public class Main {
             System.out.println("5. Keluar");
             System.out.println("=".repeat(37));
             System.out.print("Pilih menu: ");
-            int Pilih = Integer.parseInt(input.readLine());
+            int Pilih = Cek_int();
 
             switch (Pilih) {
                 case 1:
@@ -178,14 +180,13 @@ public class Main {
         System.out.print("Masukkan Nama Destinasi: ");
         String Nama = input.readLine();
         System.out.print("Masukkan Tahun DiTemukan: ");
-        int Tahun= Integer.parseInt(input.readLine());
+        int Tahun= Cek_int();
         System.out.print("Masukkan Lokasi: ");
         String Lokasi = input.readLine();
         System.out.print("Masukkan Deskripsi: ");
         String Deskripsi = input.readLine();
         System.out.print("Masukkan Jumlah Kunjungan: ");
-        int Jumlah_Kunjungan = Integer.parseInt(input.readLine());
-        // DataDestinasi.add(new DestinasiWisata(Nama,  Tahun,  Lokasi,  Deskripsi,  Jumlah_Kunjungan));
+        int Jumlah_Kunjungan = Cek_int();
         DestinasiWisata wisata = new DestinasiWisata(Nama,  Tahun,  Lokasi,  Deskripsi,  Jumlah_Kunjungan);
         DataDestinasi.add(wisata);
         System.out.println("Data Destinasi Wisata Alam Berhasil DiTambahkan!!.");
@@ -227,9 +228,9 @@ public class Main {
                 System.out.print("Masukkan Deskripsi: ");
                 String Deskripsi = input.readLine();
                 System.out.print("Masukkan Tahun DiTemukan: ");
-                int Tahun = Integer.parseInt(input.readLine());
+                int Tahun = Cek_int();
                 System.out.print("Masukkan Jumlah Kunjungan: ");
-                int Kunjungan = Integer.parseInt(input.readLine());
+                int Kunjungan = Cek_int();
                 
                 Destinasi.setNama(Nama);
                 Destinasi.setLokasi(Lokasi); ;
