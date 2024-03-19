@@ -36,7 +36,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         DataDestinasi.add(new DestinasiWisata("Derawan", 2005, "Berau", "keindahan bawah lautnya", 350000));
         DataDestinasi.add(new DestinasiWisata("Taman Nasional Bunaken", 1991, "Manado", "keindahan bawah laut  dengan ragam terumbu karang", 54000));
-        // DataAkun.add(new Akun("Wilson", "035"));
         DataAkun.add(Akun.createAkun("Wilson", "035"));
         Menu_Login();
     }
@@ -82,7 +81,6 @@ public class Main {
         String User = input.readLine();
         System.out.print("Masukkan Password >> ");
         String Pass = input.readLine();
-        // Akun newakun = new Akun(User, Pass);
         Akun newakun = Akun.createAkun(User, Pass);
         DataAkun.add(newakun);
         System.out.println("=".repeat(33));
@@ -127,7 +125,7 @@ public class Main {
             System.out.println("=================================");
             System.out.println("Tekan enter untuk melanjutkan...");
             input.readLine();
-            Login(); // Kembali ke menu login setelah kesalahan
+            Login(); 
         }
     }
     
@@ -177,18 +175,26 @@ public class Main {
         System.out.println("=".repeat(47));
         System.out.println("===== TAMBAH DATA DESTINASI WISATA ALAM =====");
         System.out.println("=".repeat(47));
-        System.out.print("Masukkan Nama Destinasi: ");
-        String Nama = input.readLine();
-        System.out.print("Masukkan Tahun DiTemukan: ");
-        int Tahun= Cek_int();
-        System.out.print("Masukkan Lokasi: ");
-        String Lokasi = input.readLine();
-        System.out.print("Masukkan Deskripsi: ");
-        String Deskripsi = input.readLine();
-        System.out.print("Masukkan Jumlah Kunjungan: ");
-        int Jumlah_Kunjungan = Cek_int();
-        DestinasiWisata wisata = new DestinasiWisata(Nama,  Tahun,  Lokasi,  Deskripsi,  Jumlah_Kunjungan);
-        DataDestinasi.add(wisata);
+        System.out.print("Ingin Menginput Berapa Data : ");
+        int Banyak_Data = DataDestinasi.size();
+        int banyak = Cek_int();
+        for (int i = 0; i < banyak; i++){
+            System.out.println("===========================");
+            System.out.println("Data Ke- " + (Banyak_Data + 1));
+            System.out.print("Masukkan Nama Destinasi: ");
+            String Nama = input.readLine();
+            System.out.print("Masukkan Tahun DiTemukan: ");
+            int Tahun= Cek_int();
+            System.out.print("Masukkan Lokasi: ");
+            String Lokasi = input.readLine();
+            System.out.print("Masukkan Deskripsi: ");
+            String Deskripsi = input.readLine();
+            System.out.print("Masukkan Jumlah Kunjungan: ");
+            int Jumlah_Kunjungan = Cek_int();
+            DestinasiWisata wisata = new DestinasiWisata(Nama,  Tahun,  Lokasi,  Deskripsi,  Jumlah_Kunjungan);
+            DataDestinasi.add(wisata);
+            Banyak_Data++;
+        }
         System.out.println("Data Destinasi Wisata Alam Berhasil DiTambahkan!!.");
     }
 
@@ -214,6 +220,7 @@ public class Main {
         System.out.println("=".repeat(71));
         System.out.println("=".repeat(18) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(18));
         System.out.println("=".repeat(71));
+        TampilkanData();
         System.out.print("Masukkan Nama Destinasi Wisata Alam Yang Ingin DiUpdate: ");
         String UpdateData = input.readLine();
         boolean ditemukan = false;
@@ -223,12 +230,12 @@ public class Main {
                 System.out.println("Data ditemukan. Silakan masukkan data baru:");
                 System.out.print("Masukkan Nama Destinasi: ");
                 String Nama = input.readLine();
+                System.out.print("Masukkan Tahun DiTemukan: ");
+                int Tahun = Cek_int();
                 System.out.print("Masukkan Lokasi: ");
                 String Lokasi = input.readLine();
                 System.out.print("Masukkan Deskripsi: ");
                 String Deskripsi = input.readLine();
-                System.out.print("Masukkan Tahun DiTemukan: ");
-                int Tahun = Cek_int();
                 System.out.print("Masukkan Jumlah Kunjungan: ");
                 int Kunjungan = Cek_int();
                 
@@ -251,6 +258,7 @@ public class Main {
         System.out.println("=".repeat(61));
         System.out.println("=".repeat(13) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(13));
         System.out.println("=".repeat(61));
+        TampilkanData();
         System.out.print("Masukkan nama Destinasi yang akan dihapus: ");
         String HapusData = input.readLine();
         boolean ditemukan = false;
