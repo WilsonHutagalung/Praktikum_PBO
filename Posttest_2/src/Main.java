@@ -143,7 +143,7 @@ public class Main {
             System.out.println("4. Hapus Data Destinasi Wisata");
             System.out.println("5. Keluar");
             System.out.println("=".repeat(37));
-            System.out.print("Pilih menu: ");
+            System.out.print("Pilih menu >> ");
             int Pilih = Cek_int();
 
             switch (Pilih) {
@@ -175,21 +175,21 @@ public class Main {
         System.out.println("=".repeat(47));
         System.out.println("===== TAMBAH DATA DESTINASI WISATA ALAM =====");
         System.out.println("=".repeat(47));
-        System.out.print("Ingin Menginput Berapa Data : ");
+        System.out.print("Ingin Menginput Berapa Data >> ");
         int Banyak_Data = DataDestinasi.size();
         int banyak = Cek_int();
         for (int i = 0; i < banyak; i++){
             System.out.println("===========================");
             System.out.println("Data Ke- " + (Banyak_Data + 1));
-            System.out.print("Masukkan Nama Destinasi: ");
+            System.out.print("Masukkan Nama Destinasi   >> ");
             String Nama = input.readLine();
-            System.out.print("Masukkan Tahun DiTemukan: ");
+            System.out.print("Masukkan Tahun DiTemukan  >> ");
             int Tahun= Cek_int();
-            System.out.print("Masukkan Lokasi: ");
+            System.out.print("Masukkan Lokasi           >> ");
             String Lokasi = input.readLine();
-            System.out.print("Masukkan Deskripsi: ");
+            System.out.print("Masukkan Deskripsi        >> ");
             String Deskripsi = input.readLine();
-            System.out.print("Masukkan Jumlah Kunjungan: ");
+            System.out.print("Masukkan Jumlah Kunjungan >> ");
             int Jumlah_Kunjungan = Cek_int();
             DestinasiWisata wisata = new DestinasiWisata(Nama,  Tahun,  Lokasi,  Deskripsi,  Jumlah_Kunjungan);
             DataDestinasi.add(wisata);
@@ -215,65 +215,100 @@ public class Main {
         System.out.println("=".repeat(168));
     }
     
+    // private static void UpdateData() throws IOException {
+    //     clear();
+    //     System.out.println("=".repeat(71));
+    //     System.out.println("=".repeat(18) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(18));
+    //     System.out.println("=".repeat(71));
+    //     TampilkanData();
+    //     System.out.print("Masukkan Nama Destinasi Wisata Alam Yang Ingin DiUpdate: ");
+    //     String UpdateData = input.readLine();
+    //     boolean ditemukan = false;
+    //     for (DestinasiWisata Destinasi : DataDestinasi) {
+    //         if (Destinasi.getNama().equalsIgnoreCase(UpdateData)) {
+    //             ditemukan = true;
+    //             System.out.println("Data ditemukan. Silakan masukkan data baru:");
+    //             System.out.print("Masukkan Nama Destinasi: ");
+    //             String Nama = input.readLine();
+    //             System.out.print("Masukkan Tahun DiTemukan: ");
+    //             int Tahun = Cek_int();
+    //             System.out.print("Masukkan Lokasi: ");
+    //             String Lokasi = input.readLine();
+    //             System.out.print("Masukkan Deskripsi: ");
+    //             String Deskripsi = input.readLine();
+    //             System.out.print("Masukkan Jumlah Kunjungan: ");
+    //             int Kunjungan = Cek_int();
+                
+    //             Destinasi.setNama(Nama);
+    //             Destinasi.setLokasi(Lokasi); ;
+    //             Destinasi.setDeskripsi(Deskripsi); ;
+    //             Destinasi.setTahun(Tahun); ;
+    //             Destinasi.setJumlahKunjungan(Kunjungan); ;
+    //             System.out.println("Data berhasil diupdate.");
+    //             break;
+    //         }
+    //     }
+    //     if (!ditemukan) {
+    //         System.out.println("Data tidak ditemukan.");
+    //     }
+    // }
     private static void UpdateData() throws IOException {
         clear();
         System.out.println("=".repeat(71));
         System.out.println("=".repeat(18) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(18));
         System.out.println("=".repeat(71));
         TampilkanData();
-        System.out.print("Masukkan Nama Destinasi Wisata Alam Yang Ingin DiUpdate: ");
-        String UpdateData = input.readLine();
+        System.out.print("Masukkan Nomor Destinasi Wisata Alam yang ingin DiUpdate >> ");
+        int NomorUpdate = Cek_int();
         boolean ditemukan = false;
-        for (DestinasiWisata Destinasi : DataDestinasi) {
-            if (Destinasi.getNama().equalsIgnoreCase(UpdateData)) {
-                ditemukan = true;
-                System.out.println("Data ditemukan. Silakan masukkan data baru:");
-                System.out.print("Masukkan Nama Destinasi: ");
-                String Nama = input.readLine();
-                System.out.print("Masukkan Tahun DiTemukan: ");
-                int Tahun = Cek_int();
-                System.out.print("Masukkan Lokasi: ");
-                String Lokasi = input.readLine();
-                System.out.print("Masukkan Deskripsi: ");
-                String Deskripsi = input.readLine();
-                System.out.print("Masukkan Jumlah Kunjungan: ");
-                int Kunjungan = Cek_int();
-                
-                Destinasi.setNama(Nama);
-                Destinasi.setLokasi(Lokasi); ;
-                Destinasi.setDeskripsi(Deskripsi); ;
-                Destinasi.setTahun(Tahun); ;
-                Destinasi.setJumlahKunjungan(Kunjungan); ;
-                System.out.println("Data berhasil diupdate.");
-                break;
-            }
+    
+        if (NomorUpdate >= 1 && NomorUpdate <= DataDestinasi.size()) {
+            DestinasiWisata destinasi = DataDestinasi.get(NomorUpdate - 1);
+            System.out.println("Data Destinasi '" + destinasi.getNama() + "' Ditemukan. Silakan Masukkan Data Baru:");
+            System.out.print("Masukkan Nama Destinasi   >> ");
+            String Nama = input.readLine();
+            System.out.print("Masukkan Tahun DiTemukan  >> ");
+            int Tahun = Cek_int();
+            System.out.print("Masukkan Lokasi           >> ");
+            String Lokasi = input.readLine();
+            System.out.print("Masukkan Deskripsi        >> ");
+            String Deskripsi = input.readLine();
+            System.out.print("Masukkan Jumlah Kunjungan >> ");
+            int Kunjungan = Cek_int();
+    
+            destinasi.setNama(Nama);
+            destinasi.setLokasi(Lokasi);
+            destinasi.setDeskripsi(Deskripsi);
+            destinasi.setTahun(Tahun);
+            destinasi.setJumlahKunjungan(Kunjungan);
+            System.out.println("Data berhasil diupdate.");
+            ditemukan = true;
+        } else {
+            System.out.println("Nomor data tidak valid.");
         }
+    
         if (!ditemukan) {
             System.out.println("Data tidak ditemukan.");
         }
     }
+    
 
     private static void HapusData() throws IOException {
-       clear();
+        clear();
         System.out.println("=".repeat(61));
-        System.out.println("=".repeat(13) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(13));
+        System.out.println("=".repeat(13) + " HAPUS DATA DESTINASI WISATA ALAM " + "=".repeat(13));
         System.out.println("=".repeat(61));
-        TampilkanData();
-        System.out.print("Masukkan nama Destinasi yang akan dihapus: ");
-        String HapusData = input.readLine();
-        boolean ditemukan = false;
-        for (DestinasiWisata Destinasi : DataDestinasi) {
-            if (Destinasi.getNama().equalsIgnoreCase(HapusData)) {
-                ditemukan = true;
-                DataDestinasi.remove(Destinasi);
-                System.out.println("Data berhasil dihapus!!.");
-                break;
-            }
-        }
-        if (!ditemukan) {
-            System.out.println("Data tidak ditemukan.");
+        TampilkanData(); 
+        System.out.print("Masukkan Nomor Data Destinasi yang ingin dihapus >> ");
+        int NomorHapus = Cek_int(); 
+        if (NomorHapus >= 1 && NomorHapus <= DataDestinasi.size()) {
+            DataDestinasi.remove(NomorHapus - 1); 
+            System.out.println("Data berhasil dihapus.");
+        } else {
+            System.out.println("Nomor data tidak valid.");
         }
     }
+    
 
     private static void keluarProgram() {
         System.out.println("Keluar dari program. Sampai jumpa!");
