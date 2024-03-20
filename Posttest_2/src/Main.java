@@ -215,43 +215,6 @@ public class Main {
         System.out.println("=".repeat(168));
     }
     
-    // private static void UpdateData() throws IOException {
-    //     clear();
-    //     System.out.println("=".repeat(71));
-    //     System.out.println("=".repeat(18) + " UPDATE DATA DESTINASI WISATA ALAM " + "=".repeat(18));
-    //     System.out.println("=".repeat(71));
-    //     TampilkanData();
-    //     System.out.print("Masukkan Nama Destinasi Wisata Alam Yang Ingin DiUpdate: ");
-    //     String UpdateData = input.readLine();
-    //     boolean ditemukan = false;
-    //     for (DestinasiWisata Destinasi : DataDestinasi) {
-    //         if (Destinasi.getNama().equalsIgnoreCase(UpdateData)) {
-    //             ditemukan = true;
-    //             System.out.println("Data ditemukan. Silakan masukkan data baru:");
-    //             System.out.print("Masukkan Nama Destinasi: ");
-    //             String Nama = input.readLine();
-    //             System.out.print("Masukkan Tahun DiTemukan: ");
-    //             int Tahun = Cek_int();
-    //             System.out.print("Masukkan Lokasi: ");
-    //             String Lokasi = input.readLine();
-    //             System.out.print("Masukkan Deskripsi: ");
-    //             String Deskripsi = input.readLine();
-    //             System.out.print("Masukkan Jumlah Kunjungan: ");
-    //             int Kunjungan = Cek_int();
-                
-    //             Destinasi.setNama(Nama);
-    //             Destinasi.setLokasi(Lokasi); ;
-    //             Destinasi.setDeskripsi(Deskripsi); ;
-    //             Destinasi.setTahun(Tahun); ;
-    //             Destinasi.setJumlahKunjungan(Kunjungan); ;
-    //             System.out.println("Data berhasil diupdate.");
-    //             break;
-    //         }
-    //     }
-    //     if (!ditemukan) {
-    //         System.out.println("Data tidak ditemukan.");
-    //     }
-    // }
     private static void UpdateData() throws IOException {
         clear();
         System.out.println("=".repeat(71));
