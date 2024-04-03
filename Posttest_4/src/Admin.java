@@ -215,11 +215,8 @@ public class Admin extends Akun {
             System.out.println("Data Destinasi Kosong.");
         } else {
             clear();
-            System.out.println("=".repeat(176));
-            System.out.println("=".repeat(75) + " LIST DATA DESTINASI WISATA " + "=".repeat(73));
-            System.out.println("=".repeat(176));
-            System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s | %-15s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi","Jenis", "Jumlah Kunjungan");
-            System.out.println("=".repeat(176));
+            DestinasiWisata wisata  = new DestinasiWisata("", 0, "", "" ); // Objek sementara untuk memanggil displayTitle
+            wisata.displayTitle();
             int No = 1;
             for (DestinasiWisata destinasi : DataDestinasi) {
                 if (destinasi instanceof Gunung) {

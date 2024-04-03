@@ -15,7 +15,11 @@ public class DestinasiWisata {
     }
 
     public void displayTitle() {
-        System.out.println("=".repeat(75) + " LIST DATA DESTINASI " + "=".repeat(73));
+        System.out.println("=".repeat(176));
+            System.out.println("=".repeat(75) + " LIST DATA DESTINASI WISATA " + "=".repeat(73));
+            System.out.println("=".repeat(176));
+            System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s | %-15s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi","Jenis", "Jumlah Kunjungan");
+            System.out.println("=".repeat(176));
     }
 
     public void display(int nomor) {
