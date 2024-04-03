@@ -240,25 +240,9 @@ public class Admin extends Akun {
             System.out.println("Data Gunung Kosong.");
         } else {
             clear();
-            System.out.println("=".repeat(176));
-            System.out.println("=".repeat(75) + " LIST DATA DESTINASI GUNUNG " + "=".repeat(73));
-            System.out.println("=".repeat(176));
-            System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s | %-15s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi","Jenis", "Jumlah Kunjungan");
-            System.out.println("=".repeat(176));
+            Gunung gunung = new Gunung("", 0, "", "", "", 0); // Objek sementara untuk memanggil displayTitle
+            gunung.displayTitle();
             int No = 1;
-            // public static void displayGunung(List<Gunung> dataGunung) {
-            //     for (Gunung gunung : dataGunung) {
-            //         gunung.displayTitle();
-            //         gunung.display(dataGunung.indexOf(gunung) + 1);
-            //     }
-            // }
-        
-            // public static void displayPantai(List<Pantai> dataPantai) {
-            //     for (Pantai pantai : dataPantai) {
-            //         pantai.displayTitle();
-            //         pantai.display(dataPantai.indexOf(pantai) + 1);
-            //     }
-            // }
             for (DestinasiWisata destinasi : DataDestinasi) {
                 if (destinasi instanceof Gunung) {
                     ((Gunung) destinasi).display(No++);
@@ -274,11 +258,8 @@ public class Admin extends Akun {
             System.out.println("Data Pantai Kosong.");
         } else {
             clear();
-            System.out.println("=".repeat(176));
-            System.out.println("=".repeat(75) + " LIST DATA DESTINASI PANTAI " + "=".repeat(73));
-            System.out.println("=".repeat(176));
-            System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s | %-15s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi","Jenis", "Jumlah Kunjungan");
-            System.out.println("=".repeat(176));
+            Pantai pantai = new Pantai("", 0, "", "", "", 0); // Objek sementara untuk memanggil displayTitle
+            pantai.displayTitle();
             int No = 1;
             for (DestinasiWisata destinasi : DataDestinasi) {
                 if (destinasi instanceof Pantai) {

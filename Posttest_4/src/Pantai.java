@@ -24,14 +24,18 @@ public class Pantai extends DestinasiWisata{
         this.Jumlah_Kunjungan = Kunjungan;
     }
 
-    @Override
-    public void displayTitle() {
-        System.out.println("=".repeat(75) + " LIST DATA DESTINASI PANTAI " + "=".repeat(73));
-    }
-
+    
     @Override
     public void display(int nomor) {
-        System.out.printf("| %-3d | %-20s | %-15d | %-15s | %-70s | %-15s | %-15d |\n", nomor, getNama(), getTahunDitemukan(), getLokasi(), getDeskripsi(), getJenis(), getJumlahKunjungan());
+        System.out.printf("| %-3d | %-20s | %-15d | %-15s | %-70s | %-15s | %-16d |\n", nomor, getNama(), getTahunDitemukan(), getLokasi(), getDeskripsi(), getJenis(), getJumlahKunjungan());
     }
-
+    
+    @Override
+    public void displayTitle() {
+        System.out.println("=".repeat(176));
+        System.out.println("=".repeat(75) + " LIST DATA DESTINASI PANTAI " + "=".repeat(73));
+        System.out.println("=".repeat(176));
+        System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s | %-15s | %-15s |\n", "No","Nama Destinasi", "Tahun Ditemukan", "Lokasi", "Deskripsi","Jenis", "Jumlah Kunjungan");
+        System.out.println("=".repeat(176));
+    }
 }

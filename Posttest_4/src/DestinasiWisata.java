@@ -19,7 +19,7 @@ public class DestinasiWisata {
     }
 
     public void display(int nomor) {
-        System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s |\n", nomor, Nama_Destinasi, Tahun_DiTemukan, Lokasi, Deskripsi);
+        System.out.printf("| %-3s | %-20s | %-15s | %-15s | %-70s |\n", nomor, getNama(), getTahunDitemukan(), getLokasi(), getDeskripsi());
     }
     
 
