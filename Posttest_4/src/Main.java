@@ -73,55 +73,6 @@ public class Main {
         }
     }
 
-    // private static void Register() throws IOException {
-    //     clear();
-    //     System.out.println("=".repeat(36));
-    //     System.out.println("=".repeat(5) + " DAFTARKAN AKUN ANDA " + "=".repeat(5));
-    //     System.out.println("=".repeat(36));
-    //     System.out.println("Pilih Jenis Akun:");
-    //     System.out.println("[1] Admin");
-    //     System.out.println("[2] User");
-    //     System.out.println("=".repeat(36));
-    //     System.out.print("Masukkan pilihan >> ");
-    //     int Jenis_Akun = Cek_int();
-    
-    //     switch (Jenis_Akun) {
-    //         case 1:
-    //             System.out.print("Masukkan Username Admin >> ");
-    //             String usernameAdmin = input.readLine();
-    //             System.out.print("Masukkan Password Admin >> ");
-    //             String passwordAdmin = input.readLine();
-    //             Admin newAdmin = new Admin(usernameAdmin, passwordAdmin, "Admin", DataDestinasi);
-    //             DataAkun.add(newAdmin);
-    //             System.out.println("=".repeat(33));
-    //             System.out.println("Data Admin berhasil ditambahkan!");
-    //             System.out.println("=".repeat(33));
-    //             break;
-    //         case 2:
-    //             System.out.print("Masukkan Username User >> ");
-    //             String usernameUser = input.readLine();
-    //             System.out.print("Masukkan Password User >> ");
-    //             String passwordUser = input.readLine();
-    //             User newUser = new User(usernameUser, passwordUser, "User", DataDestinasi);
-    //             DataAkun.add(newUser);
-    //             System.out.println("=".repeat(33));
-    //             System.out.println("Data User berhasil ditambahkan!");
-    //             System.out.println("=".repeat(33));
-    //             break;
-    //         default:
-    //             System.out.println("=".repeat(22));
-    //             System.err.println("Pilihan jenis akun tidak valid");
-    //             System.out.println("=".repeat(22));
-    //             break;
-    //     }
-    //     System.out.println("");
-    //     System.out.println("Silahkan Lakukan Login");
-    //     System.out.println("");
-    //     System.out.println("Tekan enter untuk melanjutkan. . .");
-    //     input.readLine();
-    //     Login();
-    // }
-
     private static void Register() throws IOException {
         clear();
         System.out.println("=".repeat(36));
@@ -156,6 +107,7 @@ public class Main {
         Login();
     }
     
+
     // Penggunaan Overloading
     private static void Register(String jenisAkun) throws IOException {
         clear();
@@ -190,6 +142,7 @@ public class Main {
                 break;
         }
     }
+    
 
     private static void Login() throws IOException {
         clear();
