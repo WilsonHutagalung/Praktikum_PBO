@@ -3,11 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Main {
-    private static InputStreamReader P = new InputStreamReader(System.in);
-    private static BufferedReader input = new BufferedReader(P);
-    private static ArrayList<DestinasiWisata> DataDestinasi = new ArrayList<>();
-    private static ArrayList<Akun> DataAkun = new ArrayList<>();
+public final class Main {
+    private static final InputStreamReader P = new InputStreamReader(System.in);
+    private static final BufferedReader input = new BufferedReader(P);
+    private static final ArrayList<DestinasiWisata> DataDestinasi = new ArrayList<>();
+    private static final ArrayList<Akun> DataAkun = new ArrayList<>();
     
     private static void clear() {
         System.out.println("\033[H\033[2J");
@@ -182,5 +182,4 @@ public class Main {
             Login();
         }
     }
-    
 }

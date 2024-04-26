@@ -7,11 +7,11 @@ public class Akun {
         this.Password = Pass;
     }
 
-    public String getUsername() {
+    public final String getUsername() {
         return Username;
     }
 
-    public String getPassword() {
+    public final String getPassword() {
         return Password;
     }
 }
