@@ -78,10 +78,7 @@ public class User extends Akun implements UserInterface {
             if (DataDestinasi.isEmpty()) {
                 System.out.println("Data Destinasi Kosong.");
             } else {
-                clear();
-                // DestinasiWisata wisata  = new DestinasiWisata("", 0, "", "" ); // Objek sementara untuk memanggil displayTitle
-                // wisata.displayTitle();
-                
+            clear();     
             System.out.println("=".repeat(176));
             System.out.println("=".repeat(75) + " LIST DATA DESTINASI WISATA " + "=".repeat(73));
             System.out.println("=".repeat(176));
